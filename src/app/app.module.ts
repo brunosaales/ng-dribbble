@@ -1,6 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { AppRoutingModule } from './app-routing.module';
+import { FormsModule } from '@angular/forms';
+import { HttpModule } from '@angular/http';
 import { NgModule } from '@angular/core';
 
 import {
@@ -8,28 +10,40 @@ import {
   MatMenuModule,
   MatToolbarModule,
   MatIconModule,
-  MatCardModule
+  MatCardModule,
+  MatGridListModule,
+  MatFormFieldModule,
+  MatDialogModule,
 } from '@angular/material';
-
-import { FormsModule } from '@angular/forms';
-import { HttpModule } from '@angular/http';
 
 
 import { AppComponent } from './app.component';
+import { ShotsComponent } from './shots/shots.component';
+import { DetailShotComponent } from './detail-shot/detail-shot.component';
+
+
+import { ShotsService } from './shots/shots.service';
+
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ShotsComponent,
+    DetailShotComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
+    AppRoutingModule,
     MatButtonModule,
     MatMenuModule,
     MatToolbarModule,
     MatIconModule,
     MatCardModule,
+    MatGridListModule,
+    MatFormFieldModule,
+    MatDialogModule,
     FormsModule,
     HttpModule
   ],
@@ -38,9 +52,13 @@ import { AppComponent } from './app.component';
     MatMenuModule,
     MatToolbarModule,
     MatIconModule,
-    MatCardModule
+    MatCardModule,
+    MatGridListModule,
+    MatFormFieldModule,
+    MatDialogModule
   ],
-  providers: [],
+  entryComponents: [DetailShotComponent],
+  providers: [ShotsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

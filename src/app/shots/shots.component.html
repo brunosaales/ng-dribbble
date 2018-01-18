@@ -1,0 +1,41 @@
+<div class="page-background">
+  <mat-toolbar color="primary">
+    <span class="span-centered">ng-dribbble</span>
+  </mat-toolbar>
+
+
+<!-- <div>
+  <mat-card *ngFor="let shot of shots">
+    <img src="{{ shot.images.normal }}" class="">
+  </mat-card>
+</div> -->
+
+
+<mat-card class="dribbble-card" *ngFor="let shot of shots">
+  <mat-card-header>
+    <div>
+      <img class="avatar" src="{{ shot.user.avatar_url }}"/>
+    </div>
+
+    <mat-card-title>{{shot.user.name}}</mat-card-title>
+    <mat-card-subtitle>{{shot.title}}</mat-card-subtitle>
+  </mat-card-header>
+  <img mat-card-image src="{{ shot.images.normal }}" (click)="openShot(shot)" data-toggle="modal" data-target="#open-shot"/>
+  <mat-card-content>
+    <!-- <div [innerHTML] = "shot.description">
+
+    </div> -->
+  </mat-card-content>
+  <mat-card-actions>
+    <span><mat-icon>favorite</mat-icon>{{ shot.views_count }}</span>
+    <span><mat-icon>remove_red_eye</mat-icon>{{ shot.likes_count }}</span>
+    <span><mat-icon>comment</mat-icon>{{ shot.comments_count }}</span>
+  </mat-card-actions>
+</mat-card>
+
+  <!-- <span class="done">
+    <button mat-fab>
+      <mat-icon>check circle</mat-icon>
+    </button>
+  </span> -->
+</div>
