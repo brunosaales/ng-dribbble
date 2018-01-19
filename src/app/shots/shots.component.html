@@ -1,41 +1,43 @@
 <div class="page-background">
-  <mat-toolbar color="primary">
-    <span class="span-centered">ng-dribbble</span>
-  </mat-toolbar>
-
-
-<!-- <div>
-  <mat-card *ngFor="let shot of shots">
-    <img src="{{ shot.images.normal }}" class="">
-  </mat-card>
-</div> -->
-
-
-<mat-card class="dribbble-card" *ngFor="let shot of shots">
-  <mat-card-header>
+    <mat-toolbar color="primary">
+        <img class="logo-width" src='/assets/images/logo.png'/>
+    </mat-toolbar>
     <div>
-      <img class="avatar" src="{{ shot.user.avatar_url }}"/>
+        <h1 class="shots-title">
+            Popular shots on dribbble
+        </h1>
+    </div>
+    <div class="responsive-cards">
+        <mat-card class="dribbble-card" *ngFor="let shot of shots">
+            <mat-card-header>
+                <div>
+                    <img class="avatar" src="{{ shot.user.avatar_url }}"/>
+                </div>
+                <mat-card-title class="header-align">{{ shot.user.name }}</mat-card-title>
+                <mat-card-subtitle class="header-align">{{ shot.title }}</mat-card-subtitle>
+            </mat-card-header>
+
+            <mat-card-content class="card-content">
+                <img mat-card-image class="cursor" src="{{ shot.images.normal }}" (click)="openShot(shot)"/>
+            </mat-card-content>
+
+            <mat-card-actions class="padding-0">
+                <div class="middle">
+                    <mat-icon class="red">favorite</mat-icon>
+                    <span class="padding-right-15">{{ shot.likes_count }}</span>
+                    <mat-icon class="blue">remove_red_eye</mat-icon>
+                    <span class="padding-right-15">{{ shot.views_count }}</span>
+                    <mat-icon class="grey">comment</mat-icon>
+                    <span class="padding-right-15">{{ shot.comments_count }}</span>
+                </div>
+            </mat-card-actions>
+        </mat-card>
     </div>
 
-    <mat-card-title>{{shot.user.name}}</mat-card-title>
-    <mat-card-subtitle>{{shot.title}}</mat-card-subtitle>
-  </mat-card-header>
-  <img mat-card-image src="{{ shot.images.normal }}" (click)="openShot(shot)" data-toggle="modal" data-target="#open-shot"/>
-  <mat-card-content>
-    <!-- <div [innerHTML] = "shot.description">
+    <div class="footer middle">
+        <span>Made with</span>
+        <mat-icon class="red">favorite</mat-icon>
+        <span>by Bruno Alves</span>
+    </div>
 
-    </div> -->
-  </mat-card-content>
-  <mat-card-actions>
-    <span><mat-icon>favorite</mat-icon>{{ shot.views_count }}</span>
-    <span><mat-icon>remove_red_eye</mat-icon>{{ shot.likes_count }}</span>
-    <span><mat-icon>comment</mat-icon>{{ shot.comments_count }}</span>
-  </mat-card-actions>
-</mat-card>
-
-  <!-- <span class="done">
-    <button mat-fab>
-      <mat-icon>check circle</mat-icon>
-    </button>
-  </span> -->
 </div>

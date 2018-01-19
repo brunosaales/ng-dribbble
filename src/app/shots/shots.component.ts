@@ -7,29 +7,33 @@ import { DetailShotComponent } from '../detail-shot/detail-shot.component';
 
 
 @Component({
-  selector: 'app-shots',
-  templateUrl: './shots.component.html',
-  styleUrls: ['./shots.component.css']
+    selector: 'app-shots',
+    templateUrl: './shots.component.html',
+    styleUrls: ['./shots.component.css']
 })
 export class ShotsComponent implements OnInit {
 
-  detailShot: MatDialogRef<DetailShotComponent>;
+    detailShotDialogRef: MatDialogRef<DetailShotComponent>;
 
-  constructor( private shotsService: ShotsService, private dialog: MatDialog) { }
+    constructor( private shotsService: ShotsService, private dialog: MatDialog) { }
 
-  shots: {}[];
+    shots: {}[];
 
-  ngOnInit() {
-    this.getShots();
-  }
+    ngOnInit() {
+        this.getShots();
+    }
 
-  getShots() {
-   this.shotsService.getShots().subscribe(data => this.shots = data);
- }
+    getShots() {
+        this.shotsService.getShots().subscribe(data => this.shots = data);
+    }
 
- openShot(shot) {
-   this.detailShot = this.dialog.open(DetailShotComponent, shot.id);
-  }
+    openShot(shot) {
 
+        this.detailShotDialogRef = this.dialog.open(DetailShotComponent, {
+            data: {
+                shot: shot
+            },
+        });
+    }
 
 }

@@ -1,9 +1,10 @@
-<h1 mat-dialog-title>Detalhes</h1>
-  <mat-dialog-content>
-    {{selectedShot}}
-
-    {{shots}}
-  </mat-dialog-content>
-  <mat-dialog-actions>
-    <!-- <button mat-button>Cancel</button> -->
-  </mat-dialog-actions>
+<h1 mat-dialog-title class="title-bold">{{ data.shot.title }}</h1>
+<mat-dialog-content>
+    <div>
+        <img src="{{data.shot.images.hidpi}}"/>
+    </div>
+    <div [innerHTML] = "data.shot.description" class="description-max-size">
+    </div>
+</mat-dialog-content>
+<mat-dialog-actions>
+</mat-dialog-actions>

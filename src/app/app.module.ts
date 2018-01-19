@@ -6,14 +6,15 @@ import { HttpModule } from '@angular/http';
 import { NgModule } from '@angular/core';
 
 import {
-  MatButtonModule,
-  MatMenuModule,
-  MatToolbarModule,
-  MatIconModule,
-  MatCardModule,
-  MatGridListModule,
-  MatFormFieldModule,
-  MatDialogModule,
+    MatButtonModule,
+    MatMenuModule,
+    MatToolbarModule,
+    MatIconModule,
+    MatCardModule,
+    MatGridListModule,
+    MatFormFieldModule,
+    MatDialogModule,
+    MatInputModule
 } from '@angular/material';
 
 
@@ -27,38 +28,40 @@ import { ShotsService } from './shots/shots.service';
 
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    ShotsComponent,
-    DetailShotComponent
-  ],
-  imports: [
-    BrowserModule,
-    BrowserAnimationsModule,
-    AppRoutingModule,
-    MatButtonModule,
-    MatMenuModule,
-    MatToolbarModule,
-    MatIconModule,
-    MatCardModule,
-    MatGridListModule,
-    MatFormFieldModule,
-    MatDialogModule,
-    FormsModule,
-    HttpModule
-  ],
-  exports: [
-    MatButtonModule,
-    MatMenuModule,
-    MatToolbarModule,
-    MatIconModule,
-    MatCardModule,
-    MatGridListModule,
-    MatFormFieldModule,
-    MatDialogModule
-  ],
-  entryComponents: [DetailShotComponent],
-  providers: [ShotsService],
-  bootstrap: [AppComponent]
+    declarations: [
+        AppComponent,
+        ShotsComponent,
+        DetailShotComponent
+    ],
+    imports: [
+        BrowserModule,
+        BrowserAnimationsModule,
+        AppRoutingModule,
+        MatButtonModule,
+        MatMenuModule,
+        MatToolbarModule,
+        MatIconModule,
+        MatCardModule,
+        MatGridListModule,
+        MatFormFieldModule,
+        MatDialogModule,
+        MatInputModule,
+        FormsModule,
+        HttpModule
+    ],
+    exports: [
+        MatButtonModule,
+        MatMenuModule,
+        MatToolbarModule,
+        MatIconModule,
+        MatCardModule,
+        MatGridListModule,
+        MatFormFieldModule,
+        MatDialogModule,
+        MatInputModule
+    ],
+    entryComponents: [DetailShotComponent],
+    providers: [ShotsService],
+    bootstrap: [AppComponent]
 })
 export class AppModule { }

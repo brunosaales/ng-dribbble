@@ -1,11 +1,17 @@
 .dribbble-card {
-  width: 400px;
+    display: inline-block;
+    margin: 25px;
+    padding-top: 12px;
 }
 
+.responsive-cards {
+    display: inline-block;
+    text-align: center;
+}
 
 .avatar {
     position: absolute;
-    left: 5px;
+    left: 10px;
     width: 40px;
     height: 40px;
     background-size: cover;
@@ -13,26 +19,49 @@
     border-radius: 50%;
 }
 
-
 .span-vertical-align {
-  vertical-align: middle;
+    vertical-align: middle;
 }
 
 .page-background{
-  background-color: #3f51b5d9;
+    background-color: #caccea99;
 }
 
 .span-centered {
-  width: 100%;
-  text-align: center;
+    width: 100%;
+    text-align: center;
 }
 
 .example-form {
-  min-width: 150px;
-  max-width: 500px;
-  width: 100%;
+    min-width: 150px;
+    max-width: 500px;
+    width: 100%;
 }
 
 .example-full-width {
-  width: 100%;
+    width: 100%;
+}
+
+.logo-width {
+    width: 135px;
+}
+
+.cursor {
+    cursor: pointer;
+}
+
+.card-content {
+    padding-top: 16px;
+}
+
+.header-align {
+    text-align: left;
+    margin-left: 25px;
+}
+
+.shots-title {
+    text-align: center;
+    color: #4e5ebb9e;
+    padding-top: 25px;
+    font-size: 38px;
 }

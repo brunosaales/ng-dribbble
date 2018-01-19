@@ -12,16 +12,12 @@ import 'rxjs/add/operator/catch';
 @Injectable()
 export class ShotsService {
 
-  constructor(private http: Http) { }
+    constructor(private http: Http) { }
 
 
-  getShots() {
-    return this.http.get('https://api.dribbble.com/v1/shots?per_page=10&access_token=c6d6ae8f82e0f0e339ff9bac3ab4b267609ebd623f3d916942aadbf01cbcad68').map((res:Response) => res.json());
-  }
-
-  getDetailShot(id){
-    return this.http.get('https://api.dribbble.com/v1/shots/' + id + '?access_token=c6d6ae8f82e0f0e339ff9bac3ab4b267609ebd623f3d916942aadbf01cbcad68').map((res:Response) => res.json());
-  }
+    getShots() {
+        return this.http.get('https://api.dribbble.com/v1/shots?per_page=15&access_token=a76a821f21bd0e5f9dd065d7c9f5e19f9c97aedb8435f8c15b04b93b2295bc7c').map((res:Response) => res.json());
+    }
 
 
 }
