@@ -1,8 +1,8 @@
 # NgDribbble
 
 This project is a front-end test for a recruitment process at [Zup](http://www.zup.com.br/). The goal is to get and handle data (shots) from [Dribbble API](http://developer.dribbble.com/).
-If you want to skip the steps and check out the final result, just visit: (https://brunosaales.github.io/ng-dribbble/shots).
 
+If you want to skip the steps and check out the final result, just visit: (https://brunosaales.github.io/ng-dribbble/shots).
 Or, if you want to follow the steps, run `npm install` and then run `npm start`, and you are ready to go.
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.6.2.
